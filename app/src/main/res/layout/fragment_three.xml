@@ -1,0 +1,32 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frameLayout"
+    tools:context="fragement.three">
+  <Button
+      android:id="@+id/begin"
+      android:layout_width="300dp"
+      android:layout_height="45dp"
+      android:background="@drawable/circlebutton"
+      android:textSize="15dp"
+      android:text="开始记录旅程"
+      android:textStyle="normal"
+      android:textColor="@color/black"
+      android:layout_gravity="top|center_horizontal"
+      android:layout_marginTop="15dp"
+      android:drawableLeft="@drawable/pen"
+      android:paddingLeft="80dp"
+      android:paddingRight="80dp"
+      android:drawableRight="@color/tinywhite"
+      >
+  </Button>
+  <android.support.v7.widget.RecyclerView
+      android:layout_marginTop="80dp"
+      android:id="@+id/recycleView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+  </android.support.v7.widget.RecyclerView>
+
+</FrameLayout>

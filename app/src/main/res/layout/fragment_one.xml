@@ -1,0 +1,138 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="fragement.one">
+    <com.amap.api.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="110dp"
+
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sunlignt"
+        android:elevation="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/sun"
+        android:scrollbarSize="20dp"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:backgroundTint="#B2FFEB3B"
+        >
+    </android.support.design.widget.FloatingActionButton>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+            <!--AutoCompleteTextView是一个android提供的可以补全输入的textview，-->
+            <!--效果类似于PC端百度一下那个输入框下面会带出来搜索历史。-->
+            <AutoCompleteTextView
+                android:id="@+id/keyWord"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@drawable/searching"
+                android:completionThreshold="1"
+                android:dropDownVerticalOffset="1.0dip"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="请输入关键字"
+                android:textColorHint="#2196F3"
+                android:imeOptions="actionDone"
+                android:inputType="text|textAutoComplete"
+                android:maxLength="20"
+                android:paddingRight="37.0dip"
+                android:paddingLeft="20.0dip"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="16.0sp"
+                android:focusable="true"/>
+            <!--android:onClick="onActionSearchByKey"-->
+        </LinearLayout>
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_gravity="bottom"
+        >
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:id="@+id/nest"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:id="@+id/frameLayout"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:background="@color/white"
+                android:id="@+id/segmented_group"
+                app:sc_border_width="2dp"
+                app:sc_checked_text_color="#2196F3"
+                app:sc_corner_radius="5dp"
+                app:sc_tint_color="#9B9898"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <RadioButton
+                android:id="@+id/radio0"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="住宅区" />
+
+                <RadioButton
+                android:id="@+id/radio1"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="学校" />
+
+                <RadioButton
+                android:id="@+id/radio2"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="楼宇" />
+
+                <RadioButton
+                android:id="@+id/radio3"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33"
+                android:text="商场" />
+
+
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <com.example.summer.MylistView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:cacheColorHint="#FFEB3B"
+                android:dividerHeight="1px"
+                android:divider="@android:color/darker_gray"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>
